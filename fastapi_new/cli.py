@@ -9,7 +9,7 @@ from app.routers import users
 
 app = FastAPI(
     title="My FastAPI App",
-    description="Built with fastapi-new CLI",
+    description="Built with bdh-fastapi-new CLI",
     version="1.0.0"
 )
 
@@ -188,7 +188,7 @@ def banner():
   ██╔══╝  ██╔══██║╚════██║   ██║   ██╔══██║██╔═══╝ ██║    ██║╚██╗██║██╔══╝  ██║███╗██║
   ██║     ██║  ██║███████║   ██║   ██║  ██║██║     ██║    ██║ ╚████║███████╗╚███╔███╔╝
   ╚═╝     ╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝     ╚═╝    ╚═╝  ╚═══╝╚══════╝ ╚══╝╚══╝
-{RESET}{DIM}  ⚡ FastAPI Project Generator — by BDH{RESET}
+{RESET}{DIM}  ⚡ bdh-fastapi-new — FastAPI Project Generator by BackendDeveloperHub{RESET}
 """)
 
 def print_tree(project_name):
@@ -284,8 +284,8 @@ def create_project(project_name: str):
 
 def main():
     parser = argparse.ArgumentParser(
-        prog="fastapi-new",
-        description="⚡ FastAPI Project Generator by BDH"
+        prog="bdh-fastapi-new",
+        description="⚡ FastAPI Project Generator by BackendDeveloperHub"
     )
     parser.add_argument("project_name", help="Name of your FastAPI project")
     args = parser.parse_args()
