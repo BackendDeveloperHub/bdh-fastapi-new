@@ -1,14 +1,14 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="fastapi-new",
+    name="bdh-fastapi-new",
     version="1.0.0",
-    description="⚡ FastAPI Project Generator CLI — by BDH",
+    description="⚡ FastAPI Project Generator CLI — by BackendDeveloperHub",
     author="BackendDeveloperHub",
     packages=find_packages(),
     entry_points={
         "console_scripts": [
-            "fastapi-new=fastapi_new.cli:main",
+            "bdh-fastapi-new=fastapi_new.cli:main",
         ],
     },
     python_requires=">=3.8",
