@@ -47,3 +47,15 @@ uvicorn app.main:app --reload
 ```
 
 Open → http://localhost:8000/docs 🔥
+
+![PyPI](https://img.shields.io/pypi/v/bdh-fastapi-new)
+
+
+
+
+![Downloads](https://img.shields.io/pypi/dm/bdh-fastapi-new)
+
+
+
+
+![License](https://img.shields.io/pypi/l/bdh-fastapi-new)
