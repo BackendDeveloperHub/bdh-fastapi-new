@@ -74,45 +74,6 @@ It motivates me to improve and add more features!
 
 
 
-📊 Stats
-� � �
-
----
-
-# 🔥 Why this upgrade?
-
-### 1. 💥 First line impact
-👉 “create-vite for FastAPI”  
-→ instantly understand value
-
----
-
-### 2. ⭐ GitHub star CTA added
-👉 “give a ⭐” → conversion increase
-
----
-
-### 3. 🚧 Roadmap section
-👉 Users feel project active
-
----
-
-### 4. 🧠 Cleaner structure
-👉 More readable → more installs
-
----
-
-# ⚡ Next level (optional but powerful)
-
-👉 Add this at top:
-
-```md
-## 🎥 Demo
-
-![Demo](demo.gif)
-
-
-
 
 
 
