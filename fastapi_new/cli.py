@@ -214,7 +214,7 @@ def generate_from_bdh(description: str):
     )
 
     try:
-        with urllib.request.urlopen(req, timeout=60) as response:
+        with urllib.request.urlopen(req, timeout=100) as response:
             result = json.loads(response.read().decode("utf-8"))
             api_code = result.get("api_code", "")
             if api_code:
