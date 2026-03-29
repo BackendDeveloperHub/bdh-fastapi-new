@@ -8,7 +8,7 @@ import json
 # ── Boilerplate Content ─────────────────────────────────────────────
 
 MAIN_PY = '''from fastapi import FastAPI
-from app.routers import users
+from routers import users
 
 app = FastAPI(
     title="My FastAPI App",
@@ -24,9 +24,9 @@ async def root():
 '''
 
 MAIN_PY_ADMIN = '''from fastapi import FastAPI
-from app.routers import users
-from app.database import engine
-from app.admin import UserAdmin
+from routers import users
+from database import engine
+from admin import UserAdmin
 from sqladmin import Admin
 
 app = FastAPI(
@@ -48,7 +48,7 @@ async def root():
 '''
 
 ADMIN_PY = '''from sqladmin import ModelView
-from app.models.user import User
+from models.user import User
 
 class UserAdmin(ModelView, model=User):
     column_list = [User.id, User.name, User.email]
