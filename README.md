@@ -4,28 +4,52 @@
 
 Create a production-ready FastAPI project in seconds — like `create-vite` but for FastAPI ⚡
 
+--
+
+
+# bdh-fastapi-new
+
+> Scaffold a production-ready FastAPI project in seconds.
+
+[![PyPI version](https://img.shields.io/pypi/v/bdh-fastapi-new)](https://pypi.org/project/bdh-fastapi-new/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Made by BDH](https://img.shields.io/badge/Made%20by-BackendDeveloperHub-blueviolet)](https://github.com/BackendDeveloperHub)
+
 ---
 
-## 📦 Install
+## ⚡ Install
 
 ```bash
 pip install bdh-fastapi-new
+```
 
-🚀 Usage
-Bash
+---
+
+## 🚀 Usage
+
+### 🔹 Normal Project
+```bash
 bdh-fastapi-new my-project
+```
+Clean FastAPI structure with SQLAlchemy, dotenv, and Swagger docs.
 
+### 🤖 AI Endpoint Generation
+```bash
+bdh-fastapi-new my-project --ai
+```
+Auto-generates API endpoints using AI — powered by BDH's AI server.
 
-⚡ What you get
-✅ Clean project structure (routers, models, schemas, CRUD)
-✅ SQLAlchemy + dotenv setup
-✅ Ready-to-run FastAPI app
-✅ Swagger docs enabled (/docs)
+### 🔐 Admin Panel
+```bash
+bdh-fastapi-new my-project --admin
+```
+Scaffolds project with a ready-to-use `admin.py`.
 
+---
 
+## ✅ What You Get
 
-📁 Project Structure
-
+```
 my-project/
 ├── app/
 │   ├── main.py
@@ -37,43 +61,52 @@ my-project/
 ├── .env
 ├── requirements.txt
 └── README.md
+```
 
+---
 
-▶️ Run the project
-Bash
+## ▶️ Run the Project
+
+**Windows:**
+```bash
 cd my-project
 python -m venv venv
-venv\Scripts\activate  # Windows
+venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
-👉 Open: http://localhost:8000/docs⁠� 🔥
+```
 
-
-
-🐧 Linux / 🍎 macOS / Termux
-Bash
+**Linux / macOS / Termux:**
+```bash
 cd my-project
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
-👉 Open: http://localhost:8000/docs⁠� 🔥
+```
 
+👉 Open: http://localhost:8000/docs 🔥
 
+---
 
-⭐ Support
-If this tool helps you, consider giving a ⭐ on GitHub 🙌
-It motivates me to improve and add more features!
+## 🚧 Roadmap
 
+- [ ] Docker support 🐳
+- [ ] JWT Authentication 🔐
+- [ ] More CLI options
+- [ ] Enhanced AI generation 🤖
 
-🚧 Roadmap
-[ ] Docker support 🐳
-[ ] Authentication (JWT) 🔐
-[ ] CLI options (--docker, --auth)
-[ ] AI-based code generation 🤖
+---
 
+## ⭐ Support
 
+If this tool helps you, give a ⭐ on GitHub — it motivates us to keep building!
 
+---
+
+## 🛠️ Made by
+
+[BackendDeveloperHub (BDH)](https://github.com/BackendDeveloperHub) — Learn Backend. Together.
 
 
 
