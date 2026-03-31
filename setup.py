@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="bdh-fastapi-new",
-    version="v2.1",
+    version="v2.1.1",
     description="⚡ FastAPI Project Generator CLI — by BackendDeveloperHub",
     author="BackendDeveloperHub",
     packages=find_packages(),
