@@ -16,11 +16,9 @@ Create a production-ready FastAPI project in seconds — like `create-vite` but 
 ![Downloads](https://img.shields.io/pypi/dm/bdh-fastapi-new)
 ![Version](https://img.shields.io/pypi/v/bdh-fastapi-new)
 ![Python](https://img.shields.io/pypi/pyversions/bdh-fastapi-new)
-[project]
-requires-python = ">=3.8"
+
 [![Made by BDH](https://img.shields.io/badge/Made%20by-BackendDeveloperHub-blueviolet)](https://github.com/BackendDeveloperHub)
-[project]
-requires-python = ">=3.8"
+
 
 FastAPI Project Generator CLI ⚡
 
