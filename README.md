@@ -1,80 +1,58 @@
-# ⚡ bdh-fastapi-new
-
-> 🚀 FastAPI Project Generator CLI — by BackendDeveloperHub (BDH)
-
-Create a production-ready FastAPI project in seconds — like `create-vite` but for FastAPI ⚡
-
---
-
-
 # bdh-fastapi-new
 
-> Scaffold a production-ready FastAPI project in seconds.
+FastAPI project generator CLI by BackendDeveloperHub.
 
-# BDH FastAPI New 🚀
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![Downloads](https://img.shields.io/pypi/dm/bdh-fastapi-new)
-![Version](https://img.shields.io/pypi/v/bdh-fastapi-new)
-![Python](https://img.shields.io/pypi/pyversions/bdh-fastapi-new)
-
-[![Made by BDH](https://img.shields.io/badge/Made%20by-BackendDeveloperHub-blueviolet)](https://github.com/BackendDeveloperHub)
-
-
-FastAPI Project Generator CLI ⚡
-
-## 📊 Stats
-[View Download Stats](https://pypistats.org/packages/bdh-fastapi-new)
-## ⚡ Install
+## Install
 
 ```bash
 pip install bdh-fastapi-new
 ```
 
----
+## Quick Usage
 
-## 🚀 Usage
+### Standard API scaffold
 
-### 🔹 Normal Project
 ```bash
 bdh-fastapi-new my-project
 ```
-Clean FastAPI structure with SQLAlchemy, dotenv, and Swagger docs.
 
-### 🤖 AI Endpoint Generation
+### Admin scaffold
+
 ```bash
-bdh-fastapi-new my-project --ai
+bdh-fastapi-new my-project --template api-admin
 ```
-Auto-generates API endpoints using AI — powered by BDH's AI server.
 
-### 🔐 Admin Panel
+### AI-assisted scaffold
+
 ```bash
-bdh-fastapi-new my-project --admin
-```
-Scaffolds project with a ready-to-use `admin.py`.
-
----
-
-## ✅ What You Get
-
-```
-my-project/
-├── app/
-│   ├── main.py
-│   ├── database.py
-│   ├── routers/
-│   ├── models/
-│   ├── schemas/
-│   └── crud/
-├── .env
-├── requirements.txt
-└── README.md
+bdh-fastapi-new my-project --ai --ai-description "task manager API"
 ```
 
----
+## CLI Options
 
-## ▶️ Run the Project
+- `--template minimal|api|api-admin`: select scaffold preset
+- `--output-dir PATH`: destination folder
+- `--ai`: enable AI main.py generation with safe fallback
+- `--ai-description TEXT`: non-interactive AI prompt
+- `--no-network`: disable network calls (AI off)
+- `--no-color`: disable ANSI colors
+- `--plain`: plain text output
+- `--yes`: non-interactive mode
+- `--template-version VERSION`: stamp generated README with template version
+- `--version`: show CLI version
 
-**Windows:**
+## Generated Project Features
+
+- `app.main` import-safe entrypoint (`uvicorn app.main:app --reload`)
+- Layered structure (`routers`, `models`, `schemas`, `crud`)
+- `.env` and SQLAlchemy session boilerplate
+- Optional SQLAdmin integration
+- Local quality baseline (`pyproject.toml` with Ruff and pytest config)
+
+## Run Generated Project
+
+### Windows
+
 ```bash
 cd my-project
 python -m venv venv
@@ -83,7 +61,8 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-**Linux / macOS / Termux:**
+### Linux / macOS
+
 ```bash
 cd my-project
 python -m venv venv
@@ -92,31 +71,20 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-👉 Open: http://localhost:8000/docs 🔥
+Open `http://127.0.0.1:8000/docs`.
 
----
+## Development
 
-## 🚧 Roadmap
+```bash
+pip install -e .[dev]
+ruff check .
+mypy fastapi_new
+pytest
+bandit -q -r fastapi_new
+```
 
-- [ ] Docker support 🐳
-- [ ] JWT Authentication 🔐
-- [ ] More CLI options
-- [ ] Enhanced AI generation 🤖
+## Security Notes
 
----
-
-## ⭐ Support
-
-If this tool helps you, give a ⭐ on GitHub — it motivates us to keep building!
-
----
-
-## 🛠️ Made by
-
-[BackendDeveloperHub (BDH)](https://github.com/BackendDeveloperHub) — Learn Backend. Together.
-
-
-
-
-
-
+- AI code is validated with syntax and unsafe-pattern checks.
+- AI responses automatically fall back to the safe built-in template when validation fails.
+- Use `--no-network` when you need deterministic offline scaffolding.
