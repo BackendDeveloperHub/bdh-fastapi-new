@@ -42,8 +42,8 @@ def test_generated_app_serves_endpoints(tmp_path: Path) -> None:
     proc = subprocess.Popen(
         [sys.executable, "-m", "uvicorn", "app.main:app", "--port", str(port)],
         cwd=str(root),
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
         text=True,
     )
 
@@ -71,4 +71,8 @@ def test_generated_app_serves_endpoints(tmp_path: Path) -> None:
 
     finally:
         proc.terminate()
-        proc.wait(timeout=10)
+        try:
+            proc.wait(timeout=10)
+        except subprocess.TimeoutExpired:
+            proc.kill()
+            proc.wait(timeout=5)

@@ -404,8 +404,8 @@ def generate_from_bdh(description: str, timeout: int = 45) -> tuple[str | None, 
     return api_code, "ok"
 
 
-def build_files(options: ScaffoldOptions, main_content: str) -> dict[Path, str]:
-    project_root = options.output_dir / options.project_name
+def build_files(options: ScaffoldOptions, main_content: str, project_name: str) -> dict[Path, str]:
+    project_root = options.output_dir / project_name
 
     requirements_content = REQUIREMENTS_ADMIN if options.admin_mode else REQUIREMENTS
 
@@ -414,7 +414,7 @@ def build_files(options: ScaffoldOptions, main_content: str) -> dict[Path, str]:
         project_root / ".gitignore": GITIGNORE,
         project_root / "requirements.txt": requirements_content,
         project_root / "README.md": README_TEMPLATE.format(
-            project_name=options.project_name,
+            project_name=project_name,
             template_version=options.template_version,
             users_line="- GET /users -> user routes\n" if options.template != "minimal" else "",
             admin_line="- GET /admin -> Admin Panel\n" if options.admin_mode else "",
@@ -479,7 +479,7 @@ def create_project(options: ScaffoldOptions) -> Path:
     else:
         main_content = ai_main or MAIN_PY
 
-    files = build_files(options, main_content)
+    files = build_files(options, main_content, project_name)
     for path, content in files.items():
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(content, encoding="utf-8", newline="\n")
@@ -529,6 +529,9 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 
 def namespace_to_options(args: argparse.Namespace) -> ScaffoldOptions:
+    if args.admin and args.template == "minimal":
+        raise ValueError("--admin cannot be combined with --template minimal")
+
     admin_mode = args.admin or args.template == "api-admin"
     template = "api" if args.template == "api-admin" else args.template
     return ScaffoldOptions(

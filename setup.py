@@ -10,9 +10,15 @@ setup(
     extras_require={
         "dev": [
             "bandit[toml]>=1.7.0",
+            "fastapi",
             "mypy>=1.8.0",
+            "pydantic",
+            "python-dotenv",
             "pytest>=8.0.0",
             "ruff>=0.6.0",
+            "sqladmin",
+            "sqlalchemy",
+            "uvicorn",
         ],
     },
     entry_points={
@@ -20,5 +26,5 @@ setup(
             "bdh-fastapi-new=fastapi_new.cli:main",
         ],
     },
-    python_requires=">=3.8",
+    python_requires=">=3.10",
 )

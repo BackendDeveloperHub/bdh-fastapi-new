@@ -59,6 +59,12 @@ def test_parse_api_admin_template_sets_admin() -> None:
     assert options.template == "api"
 
 
+def test_reject_admin_with_minimal_template() -> None:
+    args = cli.parse_args(["myproj", "--template", "minimal", "--admin"])
+    with pytest.raises(ValueError):
+        cli.namespace_to_options(args)
+
+
 def test_validate_ai_code_rejects_unsafe() -> None:
     ok, reason = cli.validate_ai_code("import os\nos.system('rm -rf /')")
     assert ok is False

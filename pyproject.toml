@@ -28,7 +28,7 @@ exclude = [
 ]
 
 [[tool.mypy.overrides]]
-module = ["fastapi_new.*"]
+module = ["dotenv", "sqladmin", "sqlalchemy", "sqlalchemy.*"]
 ignore_missing_imports = true
 
 [tool.bandit]
