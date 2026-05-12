@@ -11,7 +11,7 @@ import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 
-VERSION = "2.2.0"
+VERSION = "v2.2.0"
 TEMPLATE_VERSION = "1"
 
 ANSI = {
