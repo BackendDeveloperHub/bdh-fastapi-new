@@ -8,6 +8,31 @@ FastAPI project generator CLI by BackendDeveloperHub.
 pip install bdh-fastapi-new
 ```
 
+### Install with pipx (Recommended for Linux)
+
+`pipx` isolates CLI tools in their own virtual environments — cleaner than global `pip install`.
+
+**Arch Linux / Manjaro:**
+
+```bash
+sudo pacman -S python-pipx
+pipx install bdh-fastapi-new
+pipx ensurepath
+```
+
+> After `pipx ensurepath`, open a new terminal and verify:
+> ```bash
+> bdh-fastapi-new --version
+> ```
+
+**Ubuntu / Debian:**
+
+```bash
+sudo apt install pipx
+pipx install bdh-fastapi-new
+pipx ensurepath
+```
+
 ## Quick Usage
 
 ### Standard API scaffold
@@ -88,3 +113,4 @@ bandit -q -r fastapi_new
 - AI code is validated with syntax and unsafe-pattern checks.
 - AI responses automatically fall back to the safe built-in template when validation fails.
 - Use `--no-network` when you need deterministic offline scaffolding.
+- 
